@@ -1,0 +1,17 @@
+p {
+    font: outline;
+    font-size: medium;
+}
+h3 {
+    text-transform: lowercase;
+}
+h4 {
+    background-color: cornflowerblue;
+    line-height: 15px;
+}
+li {
+    text-decoration:dashed ;
+}
+#header_3{
+    color: blue;
+}
