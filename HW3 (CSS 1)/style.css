@@ -1,0 +1,52 @@
+.square{
+    border: 2px solid blue;
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background-color: rgb(201, 137, 108);
+}
+.req{
+    border: 2px solid rgb(209, 132, 104);
+    margin: 5px;
+    width: 75px;
+    height: 150px;
+    display: inline-block;
+    background-color: rgb(224, 189, 93);
+
+}
+
+.req_large{
+    border: 2px solid rgb(235, 134, 98);
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 270px;
+    height: 150px;
+    display: inline-block;
+    box-shadow: 0 0 1px 5px#bdbdbd;
+    background-color: rgb(224, 189, 93);
+}
+.square_span{
+    background-color: green;
+    width: 125px;
+    height: 125px;
+    margin: 12px;
+    display: inline-block;
+}
+.req_span_large{
+    background-color: rgb(15, 105, 189);
+    width: 245px;
+    height: 125px;
+    margin: 12px;
+    display: inline-block;
+    border-radius: 60px 60px 60px 60px;
+}
+.req_span{
+    background-color: rgb(15, 105, 189);
+    width: 50px;
+    height: 125px;
+    margin: 12px;
+    display: inline-block;
+    border-radius: 30px 30px 30px 30px;
+}
