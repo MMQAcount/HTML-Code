@@ -26,6 +26,7 @@
     display: inline-block;
     box-shadow: 0 0 1px 5px#bdbdbd;
     background-color: rgb(224, 189, 93);
+    border-radius: 80px 80px 80px 80px;
 }
 .square_span{
     background-color: green;
