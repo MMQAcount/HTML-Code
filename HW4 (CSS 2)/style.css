@@ -1,0 +1,24 @@
+.cards{
+    width: 250px;
+    height: 200px;
+    border: 0 solid black;
+    display: inline-block;
+    margin: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 20px 50px  50px 50px;
+    box-shadow: 0 -5px 0 0 gray;
+    padding: 10px;
+    text-align: center;
+}
+svg, img{
+    margin-top: 15px;
+}
+.container{
+    position: absolute;
+    top: 28%;
+    left: 28%;
+}
+body{
+    background-color: #FDADA2;
+}
