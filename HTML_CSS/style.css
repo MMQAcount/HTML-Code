@@ -1,0 +1,41 @@
+nav{
+    display: flex;
+}
+nav{
+    background-color: gray;
+    height: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -8px;
+}
+.new{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.todos li {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 30px;
+    padding: 3px;
+    width: 300px;
+    height: 30px;
+}
+.done li{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    padding: 3px;
+    width: 300px;
+    height: 30px;
+    text-decoration: line-through;
+}
+.todo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
