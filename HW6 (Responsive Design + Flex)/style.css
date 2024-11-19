@@ -12,10 +12,12 @@ html {
 
 body{
     color: #511f50;
-    padding: 1%;
+    padding-left: 0;
     padding-left: 0;
     padding-right: 0;
-    margin-right: -15%;
+    margin-right: 20%;
+    margin-left: -3%;
+    font-size: smaller;
 }
 p{
     font-size: larger;
@@ -76,7 +78,7 @@ img{
     border-radius: 50%;
 }
 .content{
-    font-size: 25px;
+    font-size: 20px;
     width: 80%;
     margin-left: 70px;
     margin-top: -10px;
@@ -85,8 +87,8 @@ img{
     background-color: #511f50;
     color: white;
     border-radius: 2%;
-    width: 100%;
-    height: 250px;
+    width: 90%;
+    height: 210px;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -102,13 +104,13 @@ ul{
     border-radius: 8px;
     height: 75px;
     gap: 8px;
-    width: 100%; 
+    width: 90%; 
     background-color: #f6f1f7;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 /* For mobile phones: */
@@ -166,6 +168,8 @@ ul{
         padding-left: 9%;
         padding-right: 7%;
         margin-right: 0;
+        color: #511f50;
+        margin-left: 0;
     }
     h4{
         width: 75%;
