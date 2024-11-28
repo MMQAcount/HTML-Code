@@ -28,5 +28,19 @@ const div = () => {
     resEle.innerText = "= " + result;
 }
 
-const box = document.getElementById("h");
-box.onmouseover(box.classList.toggle('change'));
+const box = document.getElementById("hi");
+box.addEventListener("mouseover", () => {
+        if(box.value === "Hi"){
+            box.value = "Bey";
+        };
+        if(box.value === "Bey") {
+            box.value = "Hi";
+        };
+        box.style.left = (Math.floor(random()*(window.innerWidth-box.offsetWidth)));
+        box.style.right = (Math.floor(random()*(window.innerHeight-box.offsetHeight)));
+        box.style.backgroundColor = (rgp(Math.floor(random()*256),Math.floor(random()*256),Math.floor(random()*256)));
+    }
+); 
+
+
+

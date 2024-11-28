@@ -17,35 +17,19 @@
     <div class="todo">
       <div class="new">
         <input type="text" name="new-todo" id="new-todo" placeholder="new" />
-        <button>➕</button>
+        <button onclick="newToDo()"> ➕</button>
       </div>
       <div class="todos">
         <p>Todo</p>
-        <ul>
-            <li>
+        <ul id="todos">
+            <!-- <li>
               <input type="checkbox">
               <p>1. Git add ➕</p>
               <div>
                 <button>❌</button>
                 <button>✏</button>
               </div>
-            </li>
-            <li>
-              <input type="checkbox">
-              <p>2. Git commit 🔃</p>
-              <div>
-                <button>❌</button>
-                <button>✏</button>
-              </div>
-            </li>
-            <li>
-              <input type="checkbox">
-              <p>2. Git push ⬆</p>
-              <div>
-                <button>❌</button>
-                <button>✏</button>
-              </div>
-            </li>
+            </li> -->
         </ul>
       </div>
       <div class="done">
@@ -62,6 +46,7 @@
         </ul>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
 
