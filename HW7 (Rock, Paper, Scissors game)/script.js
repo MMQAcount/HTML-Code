@@ -12,27 +12,49 @@ const lizard_score = `<button id="lizard" style="border-color: #8a5de2;box-shado
 const spock_score = `<button id="spock" style="border-color: #40b2c9;box-shadow: inset 0px 4px rgba(128, 128, 128, 0.418), 0px 5px rgba(64, 178, 201, 0.7);"><img src="./images/icon-spock.svg" alt="spock"></button>`;
 const play_history = [];
 const try_again = `<button id="try_again" onclick="refresh()" class="slide-fwd-center">PLAY AGAIN</button>`
-// const storeData = () => {
-//     localStorage.setItem("game", JSON.stringify(play_history));
-//     localStorage.setItem("scoree", score_);
-// };
-// const readData = () => {
-//     try {
-//       const strJSON = localStorage.getItem("game");
-//       return strJSON === null ? [] : JSON.parse(strJSON);
-//     } catch (error) {
-//       return [];
-//     }
 
-//  };
-// const renderPage = () => {
-//     storeData();
-//     readData();
-// }  
-//renderPage();
 document.addEventListener("DOMContentLoaded", () => {
+    alert("Double-click on the screen! Go to history")
     refresh();
 });
+const his_overlay = document.getElementById("his_overlay");
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("dblclick", function (event) {
+        alert("Double-click detected on the screen! Go to history");
+        his_overlay.style.display = "flex";
+        his_overlay.innerHTML = ``;
+        if(play_history.length != 0){
+            play_history.forEach((member, index) => {
+                his_overlay.insertAdjacentHTML(
+                "beforeend",
+                `
+                <table>
+                <tr>
+                    <th>NO</th>
+                    <th>YOU</th>
+                    <th>HOUSE</th>
+                    <th>SCORE</th>
+                </tr>
+                <tr>
+                    <td> ${index+1}</td>
+                    <td>${member.you}</td>
+                    <td>${member.house}</td>
+                    <td>${member.score_val}</td>
+                    </tr>
+            </table>
+                `
+                );
+            });
+        }
+          else{
+                his_overlay.insertAdjacentHTML("beforeend", `<h2>Try to play!</h2>`);
+          }
+        his_overlay.insertAdjacentHTML("beforeend", `<button class="his_button" onclick="go_back()">Close</button>`)
+    });
+});
+const go_back = () => {
+    document.getElementById("his_overlay").style.display = "none";
+}
 const refresh = () => {
     play_container.innerHTML = `
         <button id="scissor" onclick="on_choose('scissor')"><img src="./images/icon-scissors.svg" alt="scissors"></button>
