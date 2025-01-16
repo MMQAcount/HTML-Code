@@ -10,28 +10,19 @@
 <body>
     <div class="container">
         <div class="header_container">
-            <img src="./images/logo.svg" alt="triangle">
+            <img src="./images/logo-bonus.svg" alt="logo">
             <div class="score_container">
-                <h3>SCORE</h3>
+                <h3><strong>SCORE</strong></h3>
                 <h1 id="score"></h1>
             </div>
         </div>
-        <div class="play_container">
-            <div class="paper_scissor">
-                <button id="paper" style="border-color: #4c69f3;" onclick="on_choose('paper')"><img src="./images/icon-paper.svg" alt="paper"></button>
-                <button id="scissor" onclick="on_choose('scissor')"><img src="./images/icon-scissors.svg" alt="scissors"></button>
-            </div>
-            <button id="rock" class="brown_button btn-5" onclick="on_choose('rock')"><img src="./images/icon-rock.svg" alt="rock"></button>
+        <div class="play_container" id="play_container">
         </div>
     </div>
     <button class="rules_button" id="rules_button" onclick="show_rules()">RULES</button>
     <div id="overlay"> 
-        <div class="rules_part">
-            <div class="close_rules">
-                <h1>Rules</h1>
-                <button id="hide_rules" onclick="hide_rules()">X</button>
-            </div>
-            <img src="./images/image-rules.svg" alt="roles" width="80%" height="80%">
+        <div class="rules_part" id="rules_part">
+            
         </div>
     </div>
 </body>
