@@ -32,3 +32,4 @@ const deleteToDo = (index) => {
     items.splice(index, 1);
     renderItems();
 }
+
