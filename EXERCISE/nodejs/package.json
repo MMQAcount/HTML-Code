@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_example",
+  "version": "1.0.0",
+  "description": "just an example ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodeJs",
+    "example",
+    "\\"
+  ],
+  "author": "Maram",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
