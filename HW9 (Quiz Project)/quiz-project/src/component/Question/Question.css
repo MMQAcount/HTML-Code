@@ -1,0 +1,23 @@
+.question-answer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    color: black;
+    text-align: left;
+    padding: 20px;
+    padding-left: 40px;
+}
+h3{
+    font-size: 25px;
+    color: black;
+}
+label{
+    font-size: larger;
+    color: black;
+}
+.answer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

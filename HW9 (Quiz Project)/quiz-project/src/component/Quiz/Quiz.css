@@ -1,0 +1,30 @@
+.question-container{
+    border: 3px solid rgba(96, 66, 136, 0.781);
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+}
+.quiz-container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15%;
+}
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(96, 66, 136, 0.781);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 40%;
+    align-items: center;
+}
+.header >h3 {
+    color:white;
+    margin-left: 25px;
+}

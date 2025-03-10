@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(96, 66, 136, 0.84);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  font-size: 40px;
+  color: rgba(96, 66, 136, 0.84);
+}
+
+.button {
+  position: relative;
+  min-width: 290px;
+  min-height: 55px;
+  display: inline-flex;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: white;
+  background: rgba(96, 66, 136, 0.84);
+  background: linear-gradient(90deg, rgba(96, 66, 136, 0.84) 0%, rgba(96, 66, 136, 0.84) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 5px 5px 24px rgba(96, 66, 136, 0.84);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  z-index: 10;
+}
+
+
+.button:hover::after,
+.button:focus::after {
+  animation: none;
+  display: none;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: inherit;
+  border: 4px solid rgba(96, 66, 136, 0.5);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(96, 66, 136, 0.6);
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.context {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.area {
+  background: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(96, 66, 136, 0.829);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles2 li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(96, 66, 136, 0.781);
+  animation: animate2 25s linear infinite;
+  top: -150px;
+}
+
+.circles li:nth-child(1),
+.circles2 li:nth-child(7) {
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2),
+.circles2 li:nth-child(9) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(10),
+.circles2 li:nth-child(6) {
+  left: 60%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(8),
+.circles2 li:nth-child(4) {
+  left: 30%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 1s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5),
+.circles2 li:nth-child(5) {
+  left: 40%;
+  width: 35px;
+  height: 35px;
+  animation-delay: 2s;
+}
+
+.circles li:nth-child(6),
+.circles2 li:nth-child(3) {
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7),
+.circles2 li:nth-child(1) {
+  left: 20%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8),
+.circles2 li:nth-child(4) {
+  left: 70%;
+  width: 35px;
+  height: 35px;
+  animation-delay: 10s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(2),
+.circles2 li:nth-child(9) {
+  left: 80%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(3),
+.circles2 li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 2s;
+  animation-duration: 11s;
+}
+
+/* New keyframes for circles2 */
+@keyframes animate2 {
+  0% {
+    transform: translateY(-1000px) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(0) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes animate {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+}
