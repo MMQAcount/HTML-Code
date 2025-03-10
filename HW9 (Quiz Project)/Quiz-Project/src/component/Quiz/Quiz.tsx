@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Question from '../Question/Question';
 import './Quiz.css';
+import Question from '../Question/Question';
+
 interface IQuestion {
     question: string,
     answer1: string,
