@@ -9,7 +9,7 @@ const StartQuiz = (props: IProps) => {
             <div className="container">
                 <h1>Start Quiz</h1>
                 <button className="button" onClick={() => {props.onStart("quiz")}}>
-                    Start
+                    Start Quiz
                 </button>
 
             </div>

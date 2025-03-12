@@ -21,3 +21,10 @@ label{
     flex-direction: row;
     gap: 10px;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: black;
+    text-align: left;
+}
