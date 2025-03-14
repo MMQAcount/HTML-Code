@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       {currentPage === 'start-quiz' && <StartQuiz onStart={(page: string) => {setCurrentPage(page)}} />}
-      {currentPage === 'quiz' && <Quiz />}
+      {currentPage === 'quiz' && <Quiz onFinish={(page: string) => {setCurrentPage(page)}}/>}
     </>
   )
 }
