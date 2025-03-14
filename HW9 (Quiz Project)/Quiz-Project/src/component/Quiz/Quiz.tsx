@@ -150,37 +150,65 @@ const Quiz = (props: IProps) => {
     };
 
     return (
-        <div className="quiz-container">
-            {currentQ < quizQuestions.length ?
-                <div className="quiz-container">
-                    <div className="header">
-                        <h3>Quiz</h3>
-                        <h3>Question {currentQ + 1}</h3>
-                    </div>
-                    <div className="question-container">
-                        <Question data={quizQuestions[currentQ]} next={nextQ} disAnswer={disableAnswer}/>
-                        {submit === false && <button
-                            onClick={() => {
-                                setSubmit(true);
-                            }}
-                        >
-                            Submit
-                        </button>}
-                        {
-                            submit && <div className="auto">
-                                <button onClick={handleNextQuestion}>
-                                    Next
-                                </button>
-                                <div className={answer ? "alert alert-success" :  "alert alert-danger"} role="alert">
-                                    {answer ? <h3>True Answer!!</h3> : <h3>Wrong Answer!!</h3>}
+        <div className="context">
+            <div className="quiz-container">
+                        {currentQ < quizQuestions.length ?
+                            <div className="quiz-container">
+                                <div className="header">
+                                    <h3>Quiz</h3>
+                                    <h3>Question {currentQ + 1}</h3>
                                 </div>
+                                <div className="question-container animations">
+                                    <Question data={quizQuestions[currentQ]} next={nextQ} disAnswer={disableAnswer}/>
+                                    {submit === false && <button
+                                        onClick={() => {
+                                            setSubmit(true);
+                                        }}
+                                    >
+                                        Submit
+                                    </button>}
+                                    {
+                                        submit && <div className="auto">
+                                            <button onClick={handleNextQuestion}>
+                                                Next
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                                {submit && <div className={answer ? "alert alert-success" :  "alert alert-danger"} role="alert">
+                                                {answer ? <h3>True Answer!!</h3> : <h3>Wrong Answer!!</h3>}
+                                            </div>}
                             </div>
+                            :
+                            <Result tryAgain={props.onFinish} mark={getMark()} numberOfQuestion={quizQuestions.length} />
                         }
-                    </div>
-                </div>
-                :
-                <Result tryAgain={props.onFinish} mark={getMark()} numberOfQuestion={quizQuestions.length} />
-            }
+            </div>
+            <div className="area" >
+                <ul className="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul className="circles2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </div>
     );
 };
