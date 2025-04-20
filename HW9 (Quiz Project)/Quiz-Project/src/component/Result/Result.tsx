@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import './Result.css';
+import { NavLink } from 'react-router';
 
 interface IProps {
     mark: number;
     numberOfQuestion: number;
-    tryAgain: (page: string) => void;
 }
 
 const Result = (props: IProps) => {
@@ -36,9 +36,7 @@ const Result = (props: IProps) => {
                         <h1 className="fail">You Failed In The Quiz</h1>
                     }
                     
-                    <button className="result-button" onClick={() => props.tryAgain('start-quiz')}>
-                        Try Again
-                    </button>
+                    <NavLink to={{pathname: "/start-quiz"}} className="result-button">Try Again</NavLink>
                 </div>
             </div>
         </div>

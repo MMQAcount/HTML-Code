@@ -11,13 +11,13 @@
   align-items: center;
   justify-content: center;
   gap: 5vh;
-  width: 100%;
+  width: 100wh;
   position: absolute;
   top: 40%;
-  left: 12%;
+  left: 15%;
 }
 .context{
-  width: 95vw;
+  width: 95wh;
   height: fit-content;
 }
 h1 {
@@ -47,6 +47,7 @@ h1 {
   outline: none;
   padding: 10px;
   z-index: 10;
+  text-decoration: none;
 }
 
 

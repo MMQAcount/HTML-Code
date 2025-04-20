@@ -1,7 +1,29 @@
 #root {
-  max-width: 1280px;
+  max-width: 100wh;
   height: fit-content;
   margin: 0;
   padding: 0;
   text-align: center;
+}
+.home-page{
+  width: 100wh;
+}
+.navBar{
+  width: 100%;
+  height: 60px;
+  background-color: rgba(96, 66, 136, 0.781);
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  gap: 40%;
+  align-items: center;
+}
+.navBar h3 {
+  color: white;
+  margin-left: 20px;
+}
+.add-nav{
+  text-decoration: none;
+  color: white;
+  font-size: large;
 }

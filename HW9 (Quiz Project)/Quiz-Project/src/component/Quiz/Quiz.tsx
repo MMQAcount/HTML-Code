@@ -1,18 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import "./Quiz.css";
 import Question from "../Question/Question";
 import Result from "../Result/Result";
+import { IQuestion } from "../../@types";
+import reducer from "../../reducer.ts/reducer.ts";
+import { useNavigate } from "react-router";
 
 
-interface IQuestion {
-    question: string;
-    answer1: string;
-    answer2: string;
-    answer3: string;
-    trueAnswer: string;
-    selectedAnswer: string;
-}
-
+// const initialState: IQuestion = {question:"", answer1:"", answer2:"", answer3: "", selectedAnswer:"", trueAnswer: ""};
 
 const quizQuestions: IQuestion[] = [
     {
@@ -98,19 +93,15 @@ const quizQuestions: IQuestion[] = [
 ];
 
 
-interface IProps {
-    onFinish: (page: string) => void;
-}
-
-
-const Quiz = (props: IProps) => {    
+const Quiz = () => {    
+    // const [state, dispatch] = useReducer(reducer, initialState);
+    const navigate = useNavigate();
     const [currentQ, setCurrentQ] = useState(0);
     const [submit, setSubmit] = useState(false);
     const [mark, setMark] = useState(0);
     const [nextQ, setNextQ] = useState(false);
     const [disableAnswer, setDisableAnswer] = useState(true);
     const answer = currentQ < quizQuestions.length && quizQuestions[currentQ].selectedAnswer === quizQuestions[currentQ].trueAnswer;
-    ;
     useEffect(() => {
         if (currentQ === quizQuestions.length) {
             setMark(getMark());
@@ -129,7 +120,7 @@ const Quiz = (props: IProps) => {
                 console.log("wrong answer");
             }
         }
-        
+       
         setDisableAnswer(!disableAnswer);
     }, [submit]);
 
@@ -152,36 +143,57 @@ const Quiz = (props: IProps) => {
     return (
         <div className="context">
             <div className="quiz-container">
-                        {currentQ < quizQuestions.length ?
-                            <div className="quiz-container">
-                                <div className="header">
-                                    <h3>Quiz</h3>
-                                    <h3>Question {currentQ + 1}</h3>
-                                </div>
-                                <div className="question-container animations">
-                                    <Question data={quizQuestions[currentQ]} next={nextQ} disAnswer={disableAnswer}/>
-                                    {submit === false && <button
-                                        onClick={() => {
-                                            setSubmit(true);
-                                        }}
-                                    >
-                                        Submit
-                                    </button>}
-                                    {
-                                        submit && <div className="auto">
-                                            <button onClick={handleNextQuestion}>
-                                                Next
-                                            </button>
-                                        </div>
-                                    }
-                                </div>
-                                {submit && <div className={answer ? "alert alert-success" :  "alert alert-danger"} role="alert">
-                                                {answer ? <h3>True Answer!!</h3> : <h3>Wrong Answer!!</h3>}
-                                            </div>}
+                    {currentQ < quizQuestions.length - 1 ?
+                    <div className="quiz-container">
+                    <div className="header">
+                        <h3>Question {currentQ + 1}</h3>
+                    </div>
+                    <div className="question-container animations">
+                        <Question data={quizQuestions[currentQ]} next={nextQ} disAnswer={disableAnswer}/>
+                        {submit === false && <button
+                            onClick={() => {
+                                setSubmit(true);
+                            }}
+                        >
+                            Submit
+                        </button>}
+                        {
+                            submit && <div className="auto">
+                                <button onClick={handleNextQuestion}>
+                                    Next
+                                </button>
                             </div>
-                            :
-                            <Result tryAgain={props.onFinish} mark={getMark()} numberOfQuestion={quizQuestions.length} />
                         }
+                    </div>
+                    {submit && <div className={answer ? "alert alert-success" :  "alert alert-danger"} role="alert">
+                                    {answer ? <h3>True Answer!!</h3> : <h3>Wrong Answer!!</h3>}
+                    </div>}
+                </div> 
+                : <div className="quiz-container">
+                <div className="header">
+                    <h3>Question {currentQ + 1}</h3>
+                </div>
+                <div className="question-container animations">
+                    <Question data={quizQuestions[currentQ]} next={nextQ} disAnswer={disableAnswer}/>
+                    {submit === false && <button
+                        onClick={() => {
+                            setSubmit(true);
+                        }}
+                    >
+                        Submit
+                    </button>}
+                    {
+                        submit && <div className="auto">
+                            <button onClick={()=>navigate('/result')}>
+                                Finish
+                            </button>
+                        </div>
+                    }
+                </div>
+                {submit && <div className={answer ? "alert alert-success" :  "alert alert-danger"} role="alert">
+                                {answer ? <h3>True Answer!!</h3> : <h3>Wrong Answer!!</h3>}
+                </div>}
+            </div>}
             </div>
             <div className="area" >
                 <ul className="circles">
