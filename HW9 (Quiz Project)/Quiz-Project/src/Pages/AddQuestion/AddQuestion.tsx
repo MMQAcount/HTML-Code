@@ -1,16 +1,24 @@
-import './AddQuestion.css'
-const AddQuestion = () => {
+import './AddQuestion.css';
+
+interface IProps {
+    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    formRef: React.RefObject<HTMLFormElement | null>;
+}
+
+const AddQuestion = (props: IProps) => {
+    const { handleSubmit, formRef } = props;
+
     return (
-        <form className="form-add-question">
+        <form className="question" onSubmit={handleSubmit} ref={formRef}> {/* formRef is correctly passed here */}
             <h1>Add Question</h1>
             <label htmlFor="question">Question</label>
-            <textarea name="question" id=""></textarea>
+            <textarea id="qQuestion" name="qQuestion" required></textarea>
             <label htmlFor="answer1">Answer-1</label>
-            <input type="text" name="answer1"/>
+            <input id="qAnswer1" name="qAnswer1" type="text" required />
             <label htmlFor="answer2">Answer-2</label>
-            <input type="text" name="answer2"/>
-            <label htmlFor="anser3">Answer-3</label>
-            <input type="text" name="answer3"/>
+            <input id="qAnswer2" name="qAnswer2" type="text" required />
+            <label htmlFor="answer3">Answer-3</label>
+            <input id="qAnswer3" name="qAnswer3" type="text" required />
             <div>
                 <h4>Correct Answer</h4>
                 <div className="choices">
@@ -31,5 +39,6 @@ const AddQuestion = () => {
             <button type="submit">Submit</button>
         </form>
     );
-}
+};
+
 export default AddQuestion;

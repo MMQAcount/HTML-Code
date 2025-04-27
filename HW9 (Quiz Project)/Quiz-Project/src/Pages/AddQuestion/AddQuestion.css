@@ -1,4 +1,4 @@
-question {
+.question {
     width: 600px;
     text-align: center;
     margin: 40px auto;
@@ -8,19 +8,19 @@ question {
     background-color: rgba(96, 66, 136, 0.212);
     box-shadow: 0 4px 12px rgba(245, 153, 153, 0.05);
     position: absolute;
-    top: 1%;
+    top: 7%;
     left: 33%;
   }
   
-question > label {
+.question > label {
     display: block;
     margin-bottom: 2px;
     font-weight: 600;
     color: #333;
   }
   
-  question>textarea,
-  question>input[type="text"] {
+  .question>textarea,
+  .question>input[type="text"] {
     width: 100%;
     padding: 1px;
     margin-bottom: -15px;
@@ -31,13 +31,13 @@ question > label {
     transition: border-color 0.3s ease;
   }
   
-  question>textarea:focus,
-  question>input[type="text"]:focus {
+  .question>textarea:focus,
+  .question>input[type="text"]:focus {
     border-color: rgba(96, 66, 136, 0.781);
     outline: none;
   }
   
-  question>div {
+  .question>div {
     margin-top: 10px;
   }
   .choices{
@@ -45,13 +45,13 @@ question > label {
     gap: 45px;
   }
   
-  question > div h4 {
+  .question > div h4 {
     margin-bottom: 10px;
     text-align: left;
     color: #555;
   }
   
-  question>div label {
+  .question>div label {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
@@ -59,7 +59,7 @@ question > label {
     color: #444;
   }
   
-  question>input[type="radio"] {
+  .question>input[type="radio"] {
     margin-right: 10px;
     accent-color: rgba(96, 66, 136, 0.781);
   }
